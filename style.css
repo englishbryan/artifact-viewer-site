@@ -178,7 +178,11 @@ main {
 
 .cta-button .apple-logo {
   display: block;
+  width: 17px;
+  height: 20px;
   fill: currentColor;
+  margin-top: -2px;
+  flex-shrink: 0;
 }
 
 .features-grid {
