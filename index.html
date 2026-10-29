@@ -10,7 +10,10 @@
 <body>
   <header>
     <div class="nav-container">
-      <a href="index.html" class="brand">Artifact Viewer</a>
+      <a href="index.html" class="brand">
+        <img src="app-icon.png" alt="Artifact Viewer" class="brand-icon" width="28" height="28">
+        <span>Artifact Viewer</span>
+      </a>
       <nav>
         <a href="index.html" class="active">Overview</a>
         <a href="privacy.html">Privacy</a>
@@ -21,11 +24,79 @@
 
   <main>
     <section class="hero">
-      <span class="hero-tag">Native iOS & iPadOS</span>
-      <h1>The folio for what AI assistants build for you.</h1>
-      <p>Dashboards, trackers, calculators and mini apps made by AI assistants usually come as a single .html file. Artifact Viewer keeps them in one folio and opens them full screen, offline, straight from the Files app.</p>
-      <div class="hero-media">
-        <img class="hero-shot" src="folio.png" alt="The Artifact Viewer folio: a stack of cards for dashboards, apps, diagrams and PDFs">
+      <span class="hero-tag">Native for iOS &amp; iPadOS</span>
+      <h1>Everything your AI builds, in one place.</h1>
+      <p>Save interactive mini apps, dashboards, and single-file HTML tools straight from your AI chats. Open them full screen, completely offline, on iPhone and iPad.</p>
+      <div class="carousel-wrapper" aria-label="Artifact Viewer feature screenshots">
+        <button class="carousel-nav prev" id="carouselPrev" aria-label="Previous screenshot" type="button">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        
+        <div class="carousel-stage" id="carouselStage" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Artifact Viewer feature showcase">
+          <div class="carousel-slide" data-index="0" data-title="Everything your AI builds, in one place." data-subtitle="A swipeable card stack of every page, mini app, and note">
+            <picture>
+              <source srcset="frames/frame-1.webp" type="image/webp">
+              <img src="frames/frame-1.png" alt="Everything your AI builds, in one place. Artifact Viewer folio stack." loading="eager" width="330" height="717">
+            </picture>
+          </div>
+          <div class="carousel-slide" data-index="1" data-title="Save it in one tap." data-subtitle="Save HTML files directly from AI chat conversations via Share Sheet">
+            <picture>
+              <source srcset="frames/frame-2.webp" type="image/webp">
+              <img src="frames/frame-2.png" alt="Save it in one tap. Native iOS Share Sheet integration." loading="lazy" width="330" height="717">
+            </picture>
+          </div>
+          <div class="carousel-slide" data-index="2" data-title="Or open it from Files." data-subtitle="Choose Open With Artifact directly inside the iOS Files app">
+            <picture>
+              <source srcset="frames/frame-3.webp" type="image/webp">
+              <img src="frames/frame-3.png" alt="Or open it from Files. Files app integration." loading="lazy" width="330" height="717">
+            </picture>
+          </div>
+          <div class="carousel-slide" data-index="3" data-title="Full screen. Fully working." data-subtitle="Live interactive charts, filters, and state saved locally">
+            <picture>
+              <source srcset="frames/frame-4.webp" type="image/webp">
+              <img src="frames/frame-4.png" alt="Full screen. Fully working. Apex Portfolio interactive dashboard." loading="lazy" width="330" height="717">
+            </picture>
+          </div>
+          <div class="carousel-slide" data-index="4" data-title="Pages that open PDFs." data-subtitle="Pages link directly to sibling PDFs and documents">
+            <picture>
+              <source srcset="frames/frame-5.webp" type="image/webp">
+              <img src="frames/frame-5.png" alt="Pages that open PDFs. Field guide linked to operations manual." loading="lazy" width="330" height="717">
+            </picture>
+          </div>
+          <div class="carousel-slide" data-index="5" data-title="Read it right there." data-subtitle="Built-in PDF reader with centered Table of Contents and pill navigation">
+            <picture>
+              <source srcset="frames/frame-6.webp" type="image/webp">
+              <img src="frames/frame-6.png" alt="Read it right there. Native PDF viewer with Table of Contents." loading="lazy" width="330" height="717">
+            </picture>
+          </div>
+          <div class="carousel-slide" data-index="6" data-title="Works offline. Stays private." data-subtitle="Cached offline storage, home screen widgets, and zero tracking">
+            <picture>
+              <source srcset="frames/frame-7.webp" type="image/webp">
+              <img src="frames/frame-7.png" alt="Works offline. Stays private. Offline support and widgets." loading="lazy" width="330" height="717">
+            </picture>
+          </div>
+        </div>
+
+        <button class="carousel-nav next" id="carouselNext" aria-label="Next screenshot" type="button">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+
+      <div class="carousel-indicators">
+        <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Select screenshot">
+          <button class="dot active" role="tab" aria-selected="true" aria-label="Slide 1: Everything your AI builds" data-index="0"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Slide 2: Save it in one tap" data-index="1"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Slide 3: Or open it from Files" data-index="2"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Slide 4: Full screen. Fully working" data-index="3"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Slide 5: Pages that open PDFs" data-index="4"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Slide 6: Read it right there" data-index="5"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-label="Slide 7: Works offline. Stays private" data-index="6"></button>
+        </div>
+        <div class="carousel-caption">
+          <span class="caption-index" id="captionIndex">1 of 7</span>
+          <span class="caption-title" id="captionTitle">Everything your AI builds, in one place.</span>
+          <span class="caption-subtitle" id="captionSubtitle">A swipeable card stack of every page, mini app, and note</span>
+        </div>
       </div>
       <a href="https://apps.apple.com" class="cta-button">Available on the App Store</a>
     </section>
@@ -65,5 +136,141 @@
       <a href="support.html">Support</a>
     </p>
   </footer>
+
+  <script>
+    (function() {
+      const stage = document.getElementById('carouselStage');
+      const prevBtn = document.getElementById('carouselPrev');
+      const nextBtn = document.getElementById('carouselNext');
+      const dots = Array.from(document.querySelectorAll('#carouselDots .dot'));
+      const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+      const captionIndex = document.getElementById('captionIndex');
+      const captionTitle = document.getElementById('captionTitle');
+      const captionSubtitle = document.getElementById('captionSubtitle');
+
+      if (!stage || !slides.length) return;
+
+      const N = slides.length;
+      let currentIndex = 0;
+
+      function render() {
+        slides.forEach((slide, i) => {
+          // Circular shortest distance from currentIndex
+          let offset = (i - currentIndex) % N;
+          if (offset > Math.floor(N / 2)) offset -= N;
+          if (offset < -Math.floor(N / 2)) offset += N;
+
+          // Clear previous position classes
+          slide.classList.remove('center', 'left-1', 'right-1', 'left-2', 'right-2', 'hidden-far');
+
+          if (offset === 0) {
+            slide.classList.add('center');
+            slide.setAttribute('aria-hidden', 'false');
+          } else if (offset === -1) {
+            slide.classList.add('left-1');
+            slide.setAttribute('aria-hidden', 'false');
+          } else if (offset === 1) {
+            slide.classList.add('right-1');
+            slide.setAttribute('aria-hidden', 'false');
+          } else if (offset === -2) {
+            slide.classList.add('left-2');
+            slide.setAttribute('aria-hidden', 'true');
+          } else if (offset === 2) {
+            slide.classList.add('right-2');
+            slide.setAttribute('aria-hidden', 'true');
+          } else {
+            slide.classList.add('hidden-far');
+            slide.setAttribute('aria-hidden', 'true');
+          }
+        });
+
+        // Update indicator dots
+        dots.forEach((dot, i) => {
+          const isActive = i === currentIndex;
+          dot.classList.toggle('active', isActive);
+          dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        // Update active caption
+        const activeSlide = slides[currentIndex];
+        if (activeSlide) {
+          captionIndex.textContent = `${currentIndex + 1} of ${N}`;
+          captionTitle.textContent = activeSlide.dataset.title || '';
+          captionSubtitle.textContent = activeSlide.dataset.subtitle || '';
+        }
+      }
+
+      function goTo(index) {
+        currentIndex = ((index % N) + N) % N;
+        render();
+      }
+
+      function goNext() {
+        goTo(currentIndex + 1);
+      }
+
+      function goPrev() {
+        goTo(currentIndex - 1);
+      }
+
+      // Next / Prev buttons
+      nextBtn.addEventListener('click', goNext);
+      prevBtn.addEventListener('click', goPrev);
+
+      // Clicking any slide: if flanking, navigate directly to it
+      slides.forEach((slide, i) => {
+        slide.addEventListener('click', () => {
+          if (i !== currentIndex) {
+            goTo(i);
+          }
+        });
+      });
+
+      // Indicator dots
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => goTo(i));
+      });
+
+      // Keyboard navigation
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          goPrev();
+        } else if (e.key === 'ArrowRight') {
+          goNext();
+        }
+      });
+
+      // Touch swipe gestures
+      let touchStartX = 0;
+      let touchStartY = 0;
+
+      stage.addEventListener('touchstart', (e) => {
+        if (!e.touches.length) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+
+      stage.addEventListener('touchend', (e) => {
+        if (!e.changedTouches.length) return;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > 35 && Math.abs(dx) > Math.abs(dy)) {
+          if (dx < 0) {
+            goNext();
+          } else {
+            goPrev();
+          }
+        }
+      }, { passive: true });
+
+      // Initial render without transition flash
+      render();
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          stage.classList.add('ready');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
