@@ -5,7 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Artifact Viewer — The Folio for Your AI-Made Artifacts</title>
   <meta name="description" content="Save the web pages and mini apps AI assistants build for you, keep them in one folio, and open them full screen offline on iPhone and iPad.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261029b">
+  <style>
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      height: 660px;
+      margin: 1.5rem auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%);
+      overflow: visible;
+    }
+    .carousel-stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      perspective: 1200px;
+      transform-style: preserve-3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-slide {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 290px;
+      aspect-ratio: 1320 / 2868;
+      border-radius: 36px;
+      overflow: hidden;
+      background: #fbfbfd;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 12px 28px rgba(0, 0, 0, 0.08), 0 28px 56px -6px rgba(0, 0, 0, 0.16);
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.45s ease, filter 0.45s ease, box-shadow 0.45s ease;
+      user-select: none;
+      cursor: pointer;
+    }
+    .carousel-slide picture, .carousel-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    .carousel-slide.center {
+      z-index: 10;
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1) translateZ(0);
+      cursor: default;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 14px 34px rgba(0, 0, 0, 0.1), 0 36px 72px -8px rgba(0, 0, 0, 0.2);
+    }
+    .carousel-slide.left-1 {
+      z-index: 5;
+      opacity: 0.68;
+      transform: translate(calc(-50% - 220px), -50%) scale(0.82) rotateY(7deg);
+      filter: brightness(0.96);
+    }
+    .carousel-slide.right-1 {
+      z-index: 5;
+      opacity: 0.68;
+      transform: translate(calc(-50% + 220px), -50%) scale(0.82) rotateY(-7deg);
+      filter: brightness(0.96);
+    }
+    .carousel-slide.left-2, .carousel-slide.right-2 {
+      z-index: 2;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .carousel-slide.left-2 {
+      transform: translate(calc(-50% - 360px), -50%) scale(0.68) rotateY(12deg);
+    }
+    .carousel-slide.right-2 {
+      transform: translate(calc(-50% + 360px), -50%) scale(0.68) rotateY(-12deg);
+    }
+    .carousel-slide.hidden-far {
+      z-index: 1;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+      pointer-events: none;
+    }
+    @media (max-width: 640px) {
+      .carousel-wrapper {
+        height: 540px;
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+      }
+      .carousel-slide {
+        width: min(240px, 68vw);
+        border-radius: 30px;
+      }
+      .carousel-slide.left-1 {
+        transform: translate(calc(-50% - 150px), -50%) scale(0.8) rotateY(6deg);
+        opacity: 0.55;
+      }
+      .carousel-slide.right-1 {
+        transform: translate(calc(-50% + 150px), -50%) scale(0.8) rotateY(-6deg);
+        opacity: 0.55;
+      }
+      .carousel-slide.left-2 {
+        transform: translate(calc(-50% - 260px), -50%) scale(0.65) rotateY(10deg);
+      }
+      .carousel-slide.right-2 {
+        transform: translate(calc(-50% + 260px), -50%) scale(0.65) rotateY(-10deg);
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -33,43 +141,43 @@
         </button>
         
         <div class="carousel-stage" id="carouselStage" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Artifact Viewer feature showcase">
-          <div class="carousel-slide" data-index="0" data-title="Everything your AI builds, in one place." data-subtitle="A swipeable card stack of every page, mini app, and note">
+          <div class="carousel-slide center" data-index="0" data-title="Everything your AI builds, in one place." data-subtitle="A swipeable card stack of every page, mini app, and note">
             <picture>
               <source srcset="frames/frame-1.webp" type="image/webp">
               <img src="frames/frame-1.png" alt="Everything your AI builds, in one place. Artifact Viewer folio stack." loading="eager" width="330" height="717">
             </picture>
           </div>
-          <div class="carousel-slide" data-index="1" data-title="Save it in one tap." data-subtitle="Save HTML files directly from AI chat conversations via Share Sheet">
+          <div class="carousel-slide right-1" data-index="1" data-title="Save it in one tap." data-subtitle="Save HTML files directly from AI chat conversations via Share Sheet">
             <picture>
               <source srcset="frames/frame-2.webp" type="image/webp">
               <img src="frames/frame-2.png" alt="Save it in one tap. Native iOS Share Sheet integration." loading="lazy" width="330" height="717">
             </picture>
           </div>
-          <div class="carousel-slide" data-index="2" data-title="Or open it from Files." data-subtitle="Choose Open With Artifact directly inside the iOS Files app">
+          <div class="carousel-slide right-2" data-index="2" data-title="Or open it from Files." data-subtitle="Choose Open With Artifact directly inside the iOS Files app">
             <picture>
               <source srcset="frames/frame-3.webp" type="image/webp">
               <img src="frames/frame-3.png" alt="Or open it from Files. Files app integration." loading="lazy" width="330" height="717">
             </picture>
           </div>
-          <div class="carousel-slide" data-index="3" data-title="Full screen. Fully working." data-subtitle="Live interactive charts, filters, and state saved locally">
+          <div class="carousel-slide hidden-far" data-index="3" data-title="Full screen. Fully working." data-subtitle="Live interactive charts, filters, and state saved locally">
             <picture>
               <source srcset="frames/frame-4.webp" type="image/webp">
               <img src="frames/frame-4.png" alt="Full screen. Fully working. Apex Portfolio interactive dashboard." loading="lazy" width="330" height="717">
             </picture>
           </div>
-          <div class="carousel-slide" data-index="4" data-title="Pages that open PDFs." data-subtitle="Pages link directly to sibling PDFs and documents">
+          <div class="carousel-slide hidden-far" data-index="4" data-title="Pages that open PDFs." data-subtitle="Pages link directly to sibling PDFs and documents">
             <picture>
               <source srcset="frames/frame-5.webp" type="image/webp">
               <img src="frames/frame-5.png" alt="Pages that open PDFs. Field guide linked to operations manual." loading="lazy" width="330" height="717">
             </picture>
           </div>
-          <div class="carousel-slide" data-index="5" data-title="Read it right there." data-subtitle="Built-in PDF reader with centered Table of Contents and pill navigation">
+          <div class="carousel-slide left-2" data-index="5" data-title="Read it right there." data-subtitle="Built-in PDF reader with centered Table of Contents and pill navigation">
             <picture>
               <source srcset="frames/frame-6.webp" type="image/webp">
               <img src="frames/frame-6.png" alt="Read it right there. Native PDF viewer with Table of Contents." loading="lazy" width="330" height="717">
             </picture>
           </div>
-          <div class="carousel-slide" data-index="6" data-title="Works offline. Stays private." data-subtitle="Cached offline storage, home screen widgets, and zero tracking">
+          <div class="carousel-slide left-1" data-index="6" data-title="Works offline. Stays private." data-subtitle="Cached offline storage, home screen widgets, and zero tracking">
             <picture>
               <source srcset="frames/frame-7.webp" type="image/webp">
               <img src="frames/frame-7.png" alt="Works offline. Stays private. Offline support and widgets." loading="lazy" width="330" height="717">
